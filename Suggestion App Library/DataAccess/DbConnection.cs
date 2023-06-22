@@ -3,11 +3,11 @@ using MongoDB.Driver;
 
 namespace Suggestion_App_Library.DataAccess
 {
-    public class DbConnection
+    public class DbConnection : IDbConnection
     {
-        private readonly IConfiguration config;
-        private readonly IMongoDatabase db;
-        private string connectionId = "MongoDB";
+        private readonly IConfiguration _config;
+        private readonly IMongoDatabase _db;
+        private string _connectionId = "MongoDB";
         public string DbName { get; private set; }
         public string CategoryCollectionName { get; private set; } = "categories";
         public string StatusCollectionName { get; private set; } = "statuses";
@@ -22,15 +22,15 @@ namespace Suggestion_App_Library.DataAccess
 
         public DbConnection(IConfiguration config)
         {
-            this.config = config;
-            Client = new MongoClient(config.GetConnectionString(connectionId));
-            DbName = this.config["DatabaseName"];
-            db = Client.GetDatabase(DbName);
+            _config = config;
+            Client = new MongoClient(_config.GetConnectionString(_connectionId));
+            DbName = _config["DatabaseName"];
+            _db = Client.GetDatabase(DbName);
 
-            CategoryCollection = db.GetCollection<CategoryModel>(CategoryCollectionName);
-            StatusCollection = db.GetCollection<StatusModel>(StatusCollectionName);
-            UserCollection = db.GetCollection<UserModel>(UserCollectionName);
-            SuggestionCollection = db.GetCollection<SuggestionModel>(SuggestionCollectionName);
+            CategoryCollection = _db.GetCollection<CategoryModel>(CategoryCollectionName);
+            StatusCollection = _db.GetCollection<StatusModel>(StatusCollectionName);
+            UserCollection = _db.GetCollection<UserModel>(UserCollectionName);
+            SuggestionCollection = _db.GetCollection<SuggestionModel>(SuggestionCollectionName);
         }
     }
 }
