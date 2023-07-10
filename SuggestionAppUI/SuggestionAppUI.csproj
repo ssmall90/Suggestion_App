@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Content Remove="Pages\Create.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Components\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
@@ -19,6 +22,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Suggestion App Library\Suggestion App Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Create.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Create.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Create.razor" />
   </ItemGroup>
 
 </Project>
