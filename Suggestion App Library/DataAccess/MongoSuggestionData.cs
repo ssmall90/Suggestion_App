@@ -41,7 +41,7 @@ namespace Suggestion_App_Library.DataAccess
                 var results = await _suggestions.FindAsync(s => s.Author.Id == userId);
                 output =results.ToList();
 
-                _cache.Set(userId, userId, TimeSpan.FromMinutes(1));
+                _cache.Set(userId, output, TimeSpan.FromMinutes(1));
             }
             return output;
         }
