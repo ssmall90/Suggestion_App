@@ -6,6 +6,10 @@
     <UserSecretsId>b52ebbc3-3427-43f4-98f5-1612832d14a2</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Pages\LoginDisplay.razor" />
+  </ItemGroup>
+
   <!--<ItemGroup>
     <Content Remove="Pages\Create.razor" />
   </ItemGroup>-->
@@ -33,6 +37,15 @@
 
   <ItemGroup>
     <None Include="Pages\Create.razor" />
+    <None Include="Pages\LoginDisplay.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\LoginDisplay.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\LoginDisplay.razor" />
   </ItemGroup>
 
 </Project>
