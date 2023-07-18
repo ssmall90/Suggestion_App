@@ -62,7 +62,7 @@
     protected async override Task OnInitializedAsync()
     {
         categories = await categoryData.GetAllCategories();
-        loggedInUser = await authProvider.GetUserFromAuth(userData)
+        loggedInUser = await authProvider.GetUserFromAuth(userData);
     }
 
     private void ClosePage()
