@@ -2,3 +2,4 @@
 
 global using Suggestion_App_Library.Models;
 global using Suggestion_App_Library.DataAccess;
+global using SuggestionAppUI.Helpers;
