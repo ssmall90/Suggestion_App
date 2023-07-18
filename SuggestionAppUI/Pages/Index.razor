@@ -31,7 +31,7 @@
         {
             <Virtualize Items="@suggestions" Context="s" OverscanCount="10">
                 <div>
-                    <div>
+                    <div @onclick="(() => VoteUp(s))">
                         <div>@GetUpvoteTopText(s)</div>
                         <span class="oi oi-caret-top"></span>
                         <div>@GetUpvoteBottomText(s)</div>
@@ -259,7 +259,7 @@
                 return;
             }
 
-            if(suggestion.UserVotes.Add(loggedInUser.id) == false)
+            if(suggestion.UserVotes.Add(loggedInUser.Id) == false)
             {
                 suggestion.UserVotes.Remove(loggedInUser.Id);
             }
