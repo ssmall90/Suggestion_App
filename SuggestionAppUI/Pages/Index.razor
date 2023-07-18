@@ -3,6 +3,7 @@
 @inject IStatusData statusData
 @inject ISuggestionData suggestionData
 @inject IUserData userData
+@inject AuthenticationStateProvider authProvider
 @inject NavigationManager navManager
 @inject ProtectedSessionStorage sessionStorage
 
@@ -79,6 +80,7 @@
 </div>
 
 @code{
+    private UserModel loggedInUser;
     private List<SuggestionModel> suggestions;
     private List<CategoryModel> categories;
     private List<StatusModel> statuses;
@@ -92,6 +94,7 @@
     {
         categories = await categoryData.GetAllCategories();
         statuses = await statusData.GetAllStatuses();
+        loggedInUser = await authProvider.GetUserFromAuth(userData)
     }
 
     protected async override Task OnAfterRenderAsync(bool firstRender)
