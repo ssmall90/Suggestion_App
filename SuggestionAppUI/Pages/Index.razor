@@ -111,7 +111,7 @@
             string displayName = authState.User.Claims.FirstOrDefault(c => c.Type.Equals("name"))?.Value;
             string email = authState.User.Claims.FirstOrDefault(c => c.Type.Contains("email"))?.Value;
 
-        bool isDirty = false;
+            bool isDirty = false;
             if (objectId.Equals(loggedInUser.ObjectIdentifier) == false)
             {
                 isDirty = true;
@@ -191,7 +191,7 @@
         if (selectedCategory != "All")
         {
             output = output.Where(s => s.Category?.CategoryName == selectedCategory).ToList();
-            
+
         }
 
         if (selectedStatus != "All")
@@ -249,6 +249,37 @@
         await FilterSuggestions();
     }
 
+    private async Task VoteUp(SuggestionModel suggestion)
+    {
+        if(loggedInUser is not null)
+        {
+            if(suggestion.Author.Id == loggedInUser.Id)
+            {
+                //Cant Vote On Your Own Suggestion
+                return;
+            }
+
+            if(suggestion.UserVotes.Add(loggedInUser.id) == false)
+            {
+                suggestion.UserVotes.Remove(loggedInUser.Id);
+            }
+
+            await suggestionData.UpvoteSuggestion(suggestion.Id, loggedInUser.Id);
+
+            if(isSortedByNew == false)
+            {
+                suggestions = suggestions
+                .OrderByDescending(s => s.UserVotes.Count)
+                .ThenByDescending(s => s.DateCreated).ToList();
+
+            }
+        }
+        else
+        {
+            navManager.NavigateTo("/MicrosoftIdentity/Account/SignIn", true);
+        }
+    }
+
     private string GetUpvoteTopText(SuggestionModel suggestion)
     {
         if (suggestion.UserVotes?.Count > 0)
@@ -257,7 +288,14 @@
         }
         else
         {
-            return "Click To Upvote";
+            if(suggestion.Author.Id == loggedInUser?.Id)
+            {
+                return "Awaiting";
+            }
+            else
+            {
+                return "Click To Upvote";
+            }
         }
     }
 
