@@ -17,6 +17,7 @@ body{
     background: url(../Images//SuggestionPageBackground.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
+    color: #000000;
 }
 
 h1{
