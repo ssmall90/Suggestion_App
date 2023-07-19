@@ -65,7 +65,7 @@
     protected async override Task OnInitializedAsync()
     {
         suggestion = await suggestionData.GetSuggestion(Id);
-        loggedInUser = await authProvider.GetUserFromAuth(userData)
+        loggedInUser = await authProvider.GetUserFromAuth(userData);
     }
 
     private void ClosePage()
