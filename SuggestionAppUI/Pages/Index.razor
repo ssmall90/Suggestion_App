@@ -31,7 +31,7 @@
         {
             <Virtualize Items="@suggestions" Context="s" OverscanCount="10">
                 <div class="suggestion-entry">
-                    <div class="@GetVoteClass" @onclick="(() => VoteUp(s))">
+                    <div class="@GetVoteClass(s)" @onclick="(() => VoteUp(s))">
                         <div class="text-uppercase">@GetUpvoteTopText(s)</div>
                         <span class="oi oi-caret-top" style="font-size: 3rem;"></span>
                         <div class="text-uppercase">@GetUpvoteBottomText(s)</div>
