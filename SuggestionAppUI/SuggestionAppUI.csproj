@@ -37,7 +37,7 @@
 
   <ItemGroup>
     <None Include="Pages\Create.razor" />
-    <None Include="Pages\LoginDisplay.razor" />
+    <None Include="Shared\LoginDisplay.razor" />
   </ItemGroup>
 
   <!--<ItemGroup>
