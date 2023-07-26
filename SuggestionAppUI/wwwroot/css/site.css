@@ -512,3 +512,80 @@ a:hover, .btn-link:hover{
 .suggestion-detail-owner-notes {
     padding-bottom: 20px;
 }
+
+.submission{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.suggestions-count {
+    color: #FFFFFF;
+}
+
+.btn-approve, 
+.btn-reject{
+    width: 100%;
+    font-family:'Montserrat', sans-serif;
+    border-radius: 10px;
+    border-width: 3px;
+}
+
+.btn-approve {
+    color: #FFFFFF;
+    background-color: #110B23;
+    border-color: #FFFFFF;
+}
+
+    .btn-approve:hover {
+        color: #110B23;
+        background-color: #FFFFFF;
+        border-color: #110B23;
+    }
+
+.btn-reject {
+    color: #FFFFFF;
+    background-color: #C60E26;
+    border-color: #FFFFFF;
+}
+
+    .btn-reject:hover {
+        color: #C60E26;
+        background-color: #FFFFFF;
+        border-color: #C60E26;
+    }
+
+.approval-edit-form{
+    display:flex;
+}
+
+.approval-edit-field{
+    flex: 1;
+    border-radius:10px;
+}
+
+.submission-edit-approve {
+    color: #B5D43A
+}
+
+    .submission-edit-approve:hover{
+        font-weight:700;
+    }
+
+.submission-edit-reject {
+    color: #C60E26
+}
+
+    .submission-edit-reject:hover {
+        font-weight: 700;
+    }
+
+.submission-edit-icon{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+    .submission-edit-icon:hover {
+        color:#C60E26;
+    }
