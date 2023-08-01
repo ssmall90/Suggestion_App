@@ -31,7 +31,7 @@
                 <div class="@GetSelectedCategory()" @onclick="(() => OnCategoryClick())">All</div>
                 @foreach(var c in categories)
                 {
-                    <div class="GetSelectedCategory(c.CategoryName)"
+                    <div class="@GetSelectedCategory(c.CategoryName)"
                     @onclick="(() => OnCategoryClick(c.CategoryName))">
                     @c.CategoryName
                     </div>
@@ -137,7 +137,7 @@
                 <div class="@GetSelectedStatus()" @onclick="(() => OnStatusClick())">All</div>
                 @foreach (var s in statuses)
                 {
-                    <div class="@GetSelectedStatus(s.StatusName)" @onclick="(() => OnCategoryClick(s.StatusName))"> @s.StatusName</div>
+                    <div class="@GetSelectedStatus(s.StatusName)" @onclick="(() => OnStatusClick(s.StatusName))"> @s.StatusName</div>
                 }
             </div>
         }

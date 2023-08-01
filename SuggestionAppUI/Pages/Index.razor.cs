@@ -1,5 +1,4 @@
 namespace SuggestionAppUI.Pages;
-
 public partial class Index
 {
     private UserModel loggedInUser;
@@ -130,14 +129,15 @@ public partial class Index
     private async Task FilterSuggestions()
     {
         var output = await suggestionData.GetAllApprovedSuggestions();
-        if (selectedCategory != "All")
-        {
-            output = output.Where(s => s.Category?.CategoryName == selectedCategory).ToList();
-        }
 
         if (selectedStatus != "All")
         {
             output = output.Where(s => s.SuggestionStatus?.StatusName == selectedStatus).ToList();
+        }
+
+        if (selectedCategory != "All")
+        {
+            output = output.Where(s => s.Category?.CategoryName == selectedCategory).ToList();
         }
 
         if (string.IsNullOrWhiteSpace(searchText) == false)
@@ -173,6 +173,7 @@ public partial class Index
 
     private async Task OnCategoryClick(string category = "All")
     {
+        Console.WriteLine($"Status Button Clicked: {category}");
         selectedCategory = category;
         showCategories = false;
         await FilterSuggestions();
@@ -180,6 +181,7 @@ public partial class Index
 
     private async Task OnStatusClick(string status = "All")
     {
+        Console.WriteLine($"Status Button Clicked: {status}");
         selectedStatus = status;
         showStatuses = false;
         await FilterSuggestions();
@@ -317,4 +319,7 @@ public partial class Index
             return "";
         }
     }
+
+
+
 }
