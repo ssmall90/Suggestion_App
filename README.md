@@ -4,7 +4,7 @@
 
 ## Overview
 
-💻: The Suggestion App is a web application built with the Blazor framework. This repo serves as a practical example of building a server-side Blazor application, integerated with a mongodb database, demonstrating the various concepts and techniques taught in the course. 
+💻 The Suggestion App is a web application built with the Blazor framework. This repo serves as a practical example of building a server-side Blazor application, integerated with a mongodb database, demonstrating the various concepts and techniques taught in the course. 
 
 ## Key Features
 
