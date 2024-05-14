@@ -1,10 +1,10 @@
-# Suggestion App
+# Suggestion App 
 
-Welcome to the Suggestion App repository! This application is built using .NET and C# following a code-along course by Tim Corey on YouTube.
+:question:  Welcome to the Suggestion App repository! This application is built using .NET and C# following a code-along course by Tim Corey on YouTube.
 
 ## Overview
 
-The Suggestion App is a web application built with the Blazor framework. This repo serves as a practical example of building a server-side Blazor application, integerated with a mongodb database, demonstrating the various concepts and techniques taught in the course. 
+💻: The Suggestion App is a web application built with the Blazor framework. This repo serves as a practical example of building a server-side Blazor application, integerated with a mongodb database, demonstrating the various concepts and techniques taught in the course. 
 
 ## Key Features
 
